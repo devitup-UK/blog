@@ -1,0 +1,16 @@
+address {
+    @extend .m-0;
+}
+
+.form-control, .custom-select {
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.28);
+}
+
+.invalid-feedback {
+    @extend .pt-2;
+    @extend .px-2;
+
+    svg {
+        @extend .mr-1;
+    }
+}

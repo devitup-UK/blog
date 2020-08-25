@@ -1,0 +1,478 @@
+.color-grey {
+    color: $color-grey;
+}
+
+.color-black {
+    color: $color-black;
+}
+
+.color-white {
+    color: $color-white;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.background-color-transparent {
+    background-color: transparent;
+}
+
+.background-color-aqua {
+    background-color: $color-aqua;
+}
+
+.background-color-light-grey {
+    background-color: $color-light-grey;
+}
+
+.background-color-turqoise {
+    background-color: $color-turqoise;
+}
+
+.background-color-light-blue {
+    background-color: $color-light-blue;
+}
+
+.background-no-repeat {
+    background-repeat: no-repeat;
+}
+
+.content {
+    content: '';
+}
+
+.py-6 {
+    padding-top: ($spacer * 6) !important;
+    padding-bottom: ($spacer * 6) !important;
+}
+
+.py-7 {
+    padding-top: ($spacer * 12) !important;
+    padding-bottom: ($spacer * 12) !important;
+}
+
+.py-8 {
+    padding-top: ($spacer * 24) !important;
+    padding-bottom: ($spacer * 24) !important;
+}
+
+.overlay {
+    @extend .position-relative;
+
+    &::after {
+        @extend .position-absolute;
+        @extend .top-0;
+        @extend .right-0;
+        @extend .bottom-0;
+        @extend .left-0;
+        @extend .content;
+    }
+
+    &.overlay--black {
+        &::after {
+            background-color: rgba(0,0,0,0.51);
+        }
+    }
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.top-0 {
+    top: 0;
+}
+
+.right-0 {
+    right: 0;
+}
+
+.bottom-0 {
+    bottom: 0;
+}
+
+.left-0 {
+    left: 0;
+}
+
+.top-50 {
+    top: 50%;
+}
+
+.left-50 {
+    left: 50%;
+}
+
+.list-style-none {
+    list-style: none;
+}
+
+.d-unset {
+    display: unset;
+}
+
+@include media-breakpoint-up(sm) {
+    .color-sm-grey {
+        color: $color-grey;
+    }
+
+    .color-sm-white {
+        color: $color-white;
+    }
+
+    .background-color-sm-transparent {
+        background-color: transparent;
+    }
+
+    .background-color-sm-light-grey {
+        background-color: $color-light-grey;
+    }
+    
+    .background-color-sm-turqoise {
+        background-color: $color-turqoise;
+    }
+
+    .background-color-sm-aqua {
+        background-color: $color-aqua;
+    }
+
+    .background-color-sm-light-blue {
+        background-color: $color-light-blue;
+    }
+
+    .background-sm-no-repeat {
+        background-repeat: no-repeat;
+    }    
+
+    .py-sm-6 {
+        padding-top: ($spacer * 6) !important;
+        padding-bottom: ($spacer * 6) !important;
+    }
+
+    .py-sm-7 {
+        padding-top: ($spacer * 12) !important;
+        padding-bottom: ($spacer * 12) !important;
+    }
+    
+    .py-sm-8 {
+        padding-top: ($spacer * 24) !important;
+        padding-bottom: ($spacer * 24) !important;
+    }
+
+    .overflow-sm-hidden {
+        overflow: hidden;
+    }
+
+    .top-sm-0 {
+        top: 0;
+    }
+    
+    .right-sm-0 {
+        right: 0;
+    }
+    
+    .bottom-sm-0 {
+        bottom: 0;
+    }
+    
+    .left-sm-0 {
+        left: 0;
+    }
+
+    .top-sm-50 {
+        top: 50%;
+    }
+    
+    .left-sm-50 {
+        left: 50%;
+    }
+
+    .list-style-sm-none {
+        list-style: none;
+    }
+
+    .d-sm-unset {
+        display: unset;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .color-md-grey {
+        color: $color-grey;
+    }
+
+    .color-md-white {
+        color: $color-white;
+    }
+
+    .background-color-md-transparent {
+        background-color: transparent;
+    }
+
+    .background-color-md-light-grey {
+        background-color: $color-light-grey;
+    }
+    
+    .background-color-md-turqoise {
+        background-color: $color-turqoise;
+    }
+
+    .background-color-md-light-blue {
+        background-color: $color-light-blue;
+    }
+
+    .background-color-md-aqua {
+        background-color: $color-aqua;
+    }
+
+    .background-md-no-repeat {
+        background-repeat: no-repeat;
+    }    
+
+    .py-md-6 {
+        padding-top: ($spacer * 6) !important;
+        padding-bottom: ($spacer * 6) !important;
+    }
+
+    .py-md-7 {
+        padding-top: ($spacer * 12) !important;
+        padding-bottom: ($spacer * 12) !important;
+    }
+    
+    .py-md-8 {
+        padding-top: ($spacer * 24) !important;
+        padding-bottom: ($spacer * 24) !important;
+    }
+
+    .overflow-md-hidden {
+        overflow: hidden;
+    }
+
+    .top-md-0 {
+        top: 0;
+    }
+    
+    .right-md-0 {
+        right: 0;
+    }
+    
+    .bottom-md-0 {
+        bottom: 0;
+    }
+    
+    .left-md-0 {
+        left: 0;
+    }
+
+    .top-md-50 {
+        top: 50%;
+    }
+    
+    .left-md-50 {
+        left: 50%;
+    }
+
+    .list-style-md-none {
+        list-style: none;
+    }
+
+    .d-md-unset {
+        display: unset;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .color-lg-grey {
+        color: $color-grey;
+    }
+
+    .color-lg-white {
+        color: $color-white;
+    }
+
+    .background-color-lg-transparent {
+        background-color: transparent;
+    }
+
+    .background-color-lg-light-grey {
+        background-color: $color-light-grey;
+    }
+    
+    .background-color-lg-turqoise {
+        background-color: $color-turqoise;
+    }
+
+    .background-color-lg-light-blue {
+        background-color: $color-light-blue;
+    }
+
+    .background-color-lg-aqua {
+        background-color: $color-aqua;
+    }
+
+    .background-lg-no-repeat {
+        background-repeat: no-repeat;
+    }
+
+    .py-lg-6 {
+        padding-top: ($spacer * 6) !important;
+        padding-bottom: ($spacer * 6) !important;
+    }
+
+    .py-lg-7 {
+        padding-top: ($spacer * 12) !important;
+        padding-bottom: ($spacer * 12) !important;
+    }
+    
+    .py-lg-8 {
+        padding-top: ($spacer * 24) !important;
+        padding-bottom: ($spacer * 24) !important;
+    }
+
+    .overflow-lg-hidden {
+        overflow: hidden;
+    }
+
+    .top-lg-0 {
+        top: 0;
+    }
+    
+    .right-lg-0 {
+        right: 0;
+    }
+    
+    .bottom-lg-0 {
+        bottom: 0;
+    }
+    
+    .left-lg-0 {
+        left: 0;
+    }
+
+    .top-lg-50 {
+        top: 50%;
+    }
+    
+    .left-lg-50 {
+        left: 50%;
+    }
+
+
+    .list-style-lg-none {
+        list-style: none;
+    }
+
+    .d-lg-unset {
+        display: unset;
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .color-xl-grey {
+        color: $color-grey;
+    }
+
+    .color-xl-white {
+        color: $color-white;
+    }
+
+    .background-color-xl-transparent {
+        background-color: transparent;
+    }
+
+    .background-color-xl-light-grey {
+        background-color: $color-light-grey;
+    }
+    
+    .background-color-xl-turqoise {
+        background-color: $color-turqoise;
+    }
+
+    .background-color-xl-aqua {
+        background-color: $color-aqua;
+    }
+
+    .background-color-xl-blue {
+        background-color: $color-light-blue;
+    }
+
+    .background-xl-no-repeat {
+        background-repeat: no-repeat;
+    }    
+
+    .py-xl-6 {
+        padding-top: ($spacer * 6) !important;
+        padding-bottom: ($spacer * 6) !important;
+    }
+
+    .py-xl-7 {
+        padding-top: ($spacer * 12) !important;
+        padding-bottom: ($spacer * 12) !important;
+    }
+    
+    .py-xl-8 {
+        padding-top: ($spacer * 24) !important;
+        padding-bottom: ($spacer * 24) !important;
+    }
+
+    .overflow-xl-hidden {
+        overflow: hidden;
+    }
+
+    .top-xl-0 {
+        top: 0;
+    }
+    
+    .right-xl-0 {
+        right: 0;
+    }
+    
+    .bottom-xl-0 {
+        bottom: 0;
+    }
+    
+    .left-xl-0 {
+        left: 0;
+    }
+
+    .top-xl-50 {
+        top: 50%;
+    }
+    
+    .left-xl-50 {
+        left: 50%;
+    }
+
+
+    .list-style-xl-none {
+        list-style: none;
+    }
+
+    .d-xl-unset {
+        display: unset;
+    }
+}
+
+
+.splitter-drop-shadow {
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
+}
+
+
+
+.border-radius-0 {
+    border-radius: 0;
+}
+
+.border-0 {
+    border-width: 0;
+}
+
+
+
+
+
+.text-underline {
+    text-decoration: underline;
+}
