@@ -3,8 +3,8 @@ import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Category from "./views/Category.vue";
 import CategoryContent from "./views/CategoryContent.vue";
-import Post from "./views/Posts.vue";
-import PostView from "./views/Post.vue";
+import Posts from "./components/Posts.vue";
+import Post from "./views/Post.vue";
 import User from "./views/User.vue";
 import { $api } from "./services/wordpress.service";
 
@@ -25,12 +25,12 @@ let router = new Router({
         {
           path: "",
           name: "home",
-          component: Post
+          component: Posts
         },
         {
           path: "page/:page?",
           name: "home.page",
-          component: Post
+          component: Posts
         }
       ]
     },
@@ -41,18 +41,18 @@ let router = new Router({
         {
           path: ":slug",
           name: "user",
-          component: Post,
+          component: Posts,
         },
         {
           path: ":slug/page/:page?",
           name: "user.page",
-          component: Post
+          component: Posts
         }
       ]
     },
     {
       path: "/post/:slug",
-      component: PostView,
+      component: Post,
       name: "post"
     }
   ]
@@ -80,7 +80,7 @@ $api.menu().then((navigation) => {
               {
                 path: "",
                 name: "category." + item.title.toLowerCase(),
-                component: Post,
+                component: Posts,
                 props: {
                   category: item.title
                 }
@@ -88,7 +88,7 @@ $api.menu().then((navigation) => {
                   {
                     path: "page/:page?",
                     name: "category." + item.title.toLowerCase() + ".page",
-                    component: Post,
+                    component: Posts,
                     props: {
                       category: item.title
                     }

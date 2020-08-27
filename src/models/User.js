@@ -7,9 +7,9 @@ export default class User {
         this.id = this.userSupplied ? user.id : null;
         this.name = this.getFullName(user);
         this.slug = this.userSupplied ? user.slug : null;
-        this.title = this.userSupplied ? (user.acf['title'] ? user.acf['title'] : null) : null;
-        this.avatar = this.userSupplied ? (user.acf['avatar_image'] ? user.acf['avatar_image'].sizes['2048x2048'] : null) : null;
-        this.image = this.userSupplied ? (user.acf['profile_header_image'] ? user.acf['profile_header_image'].sizes['2048x2048'] : null) : null;
+        this.title = this.userSupplied ? user.title : null;
+        this.avatar = this.userSupplied ? user.avatar : null;
+        this.image = this.userSupplied ? user.image : null;
     }
 
     getFullName(user) {

@@ -34,7 +34,7 @@
             <b-col cols="12" lg="3">
               <b-row>
                 <b-col cols="4" lg="12">
-                  <div class="post-view__author-avatar" v-if="hasAvatar" :style="'background-image: url('+ data.post.author.avatar +')'"></div>
+                  <img class="post-view__author-avatar" v-if="hasAvatar" :src="data.post.author.avatar">
                     <div class="post-view__author-avatar" v-else>
                     <b-avatar :text="data.post.author.getInitials()" class="post-view__author-avatar__image"></b-avatar>
                     </div>
@@ -81,8 +81,10 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import PostRendering from "@/components/post/PostRendering.vue";
 import InvalidObject from "@/components/InvalidObject.vue";
+import Post from "../models/Post.js";
 import { $api } from "@/services/wordpress.service.js";
 
 export default {
@@ -94,7 +96,7 @@ export default {
   data() {
     return {
       data: {
-        post: null,
+        post: new Post(),
         loading: true,
         invalid: false,
       },
@@ -103,7 +105,9 @@ export default {
   computed: {
     hasAvatar() {
       return this.authorHasProperty('avatar');
-    }
+    },
+    ...mapState(['title']),
+    ...mapState(['description'])
   },
   created() {
     this.getPost(this.$route.params.slug);
@@ -146,6 +150,15 @@ export default {
 
       return returnBool;
     }
+  },
+  metaInfo() {
+      return {
+        title: this.title + " ~ " + this.data.post.title,
+        meta: [
+          { name: "description", content: new DOMParser().parseFromString(this.data.post.excerpt, 'text/html').body.textContent + "..." },
+          { name: "keywords", content: "blog, development, software, application, devitup, dev, web, programming, site, mobile, html, css, javascript, post, author, article, news" }
+        ]
+      }
   },
   
 };

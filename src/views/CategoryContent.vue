@@ -21,6 +21,7 @@
 
 
 <script>
+import { mapState } from "vuex";
 import CategoryModel from "@/models/Category";
 import { $api } from "@/services/wordpress.service.js";
 
@@ -103,5 +104,17 @@ export default {
         });
     },
   },
+  metaInfo() {
+      return {
+        title: this.siteTitle + " ~ " + this.title,
+        meta: [
+          { name: "description", content: "DevItUp Blog is a collection of articles from the team at DevItUp.co.uk, all posts displayed on this page are apart of the " + this.title + " category." },
+          { name: "keywords", content: "blog, development, software, application, devitup, dev, web, programming, site, mobile, html, css, javascript, " + this.title.toLowerCase() }
+        ]
+      }
+  },
+  computed: mapState({
+    siteTitle: state => state.title
+  })
 };
 </script>

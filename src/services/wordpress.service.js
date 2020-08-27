@@ -10,6 +10,7 @@ let wordPressEndpoint = process.env.VUE_APP_API_ENDPOINT + '/wp-json';
 let $api = new WPAPI({ 
     endpoint: wordPressEndpoint
 });
+$api.team = $api.registerRoute( 'devitup/v1', '/users/(?P<id>\\d+)');
 
 $api.getSiteInfo = async() => {
     return await axios.get(wordPressEndpoint + '/devitup/v1/site').then(response => {
@@ -55,14 +56,14 @@ $api.getCategoryBySlug = async (slug) => {
 }
 
 $api.getUserByID = async (id) => {
-    return await $api.users().id(id).then(response => {
+    return await $api.team().id(id).then(response => {
         return new User(response);
     })
 }
 
 $api.getUserBySlug = async (slug) => {
-    return await $api.users().slug(slug).then(response => {
-        return new User(response[0]);
+    return await axios.get(wordPressEndpoint + '/devitup/v1/users/slug/' + slug).then(response => {
+        return response.data;
     })
 }
 

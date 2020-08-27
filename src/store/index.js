@@ -8,6 +8,8 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
     state: {
+        title: null,
+        description: null,
         navigation: [],
         isLoading: true,
         error: {
@@ -33,6 +35,12 @@ const store = new Vuex.Store({
             state.error.status = true;
             state.error.code = error.code;
             state.error.detail = error.detail;
+        },
+        setTitle(state, title) {
+            state.title = title;
+        },
+        setDescription(state, description) {
+            state.description = description;
         }
     }
 });

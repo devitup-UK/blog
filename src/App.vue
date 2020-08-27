@@ -17,6 +17,7 @@ import DevItUpFooter from '@/components/footer/Footer.vue'
 import Copyright from '@/components/footer/Copyright.vue'
 import Loading from '@/components/Loading.vue'
 import Error from '@/components/Error.vue'
+import { $api } from '@/services/wordpress.service.js';
 
 export default {
   name: 'app',
@@ -31,7 +32,18 @@ export default {
     error() {
       return this.$store.state.error;
     }
-  }
+  },
+  created() {
+    this.getSiteInfo();
+  },
+  methods: {
+    getSiteInfo() {
+      $api.getSiteInfo().then((info) => {
+        this.$store.commit('setTitle', info.title);
+        this.$store.commit('setDescription', info.description);
+      });
+    },
+  },
 }
 </script>
 

@@ -1035,6 +1035,7 @@ header {
   @extend .list-style-none;
   @extend .m-0;
   @extend .p-0;
+  @extend .text-left;
 
   .post-metadata__category {
     @extend .d-none;
@@ -1509,6 +1510,7 @@ header {
   }
 
   @include media-breakpoint-up(lg) {
+    width: 100%;
     height: auto;
   }
   
