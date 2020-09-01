@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-- develop
+- master
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -17,7 +17,7 @@ steps:
 
 - script: |
     npm install
-    export VUE_APP_API_ENDPOINT=$(STAGING_API_URL) || set VUE_APP_API_ENDPOINT=$(STAGING_API_URL) && npm run build
+    export VUE_APP_API_ENDPOINT=$(PRODUCTION_API_URL) || set VUE_APP_API_ENDPOINT=$(PRODUCTION_API_URL) && npm run build
   displayName: 'npm install and build'
 - task: FtpUpload@2
   inputs:
@@ -27,7 +27,7 @@ steps:
     password: '$(FTP_PASSWORD)'
     rootDirectory: 'dist'
     filePatterns: '**'
-    remoteDirectory: '/$(STAGING_FTP_DIRECTORY)/'
+    remoteDirectory: '/$(PRODUCTION_FTP_DIRECTORY)/'
     clean: false
     cleanContents: false
     preservePaths: true
