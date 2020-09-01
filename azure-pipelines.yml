@@ -4,7 +4,11 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
+<<<<<<< HEAD
 - master
+=======
+- develop
+>>>>>>> 8cb942a0e18424c856b6673bef1aad243163e33f
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -17,6 +21,7 @@ steps:
 
 - script: |
     npm install
+<<<<<<< HEAD
     export VUE_APP_API_ENDPOINT=$(PRODUCTION_API_URL) || set VUE_APP_API_ENDPOINT=$(PRODUCTION_API_URL) && npm run build
   displayName: 'npm install and build'
 - task: FtpUpload@2
@@ -32,3 +37,7 @@ steps:
     cleanContents: false
     preservePaths: true
     trustSSL: false
+=======
+    npm run build
+  displayName: 'npm install and build'
+>>>>>>> 8cb942a0e18424c856b6673bef1aad243163e33f
