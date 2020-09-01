@@ -28,7 +28,7 @@ steps:
     password: '$(FTP_PASSWORD)'
     rootDirectory: 'dist'
     filePatterns: '**'
-    remoteDirectory: '/$(STAGING_FTP_DIRECTORY)/upload/$(Build.BuildId)/'
+    remoteDirectory: '/$(STAGING_FTP_DIRECTORY)/'
     clean: false
     cleanContents: false
     preservePaths: false
