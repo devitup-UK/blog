@@ -17,5 +17,5 @@ steps:
 
 - script: |
     npm install
-    npm run build
+    npm run build VUE_APP_API_ENDPOINT=$(STAGING_API_URL)
   displayName: 'npm install and build'
