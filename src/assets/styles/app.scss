@@ -835,6 +835,15 @@ header {
   }
 }
 
+.error-message {
+  @extend .text-center;
+  @extend .position-absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+}
+
 .not-found {
   @extend .pb-5;
 }
@@ -1324,6 +1333,7 @@ header {
 .carousel-caption {
   @extend .d-flex;
   @extend .w-100;
+  @extend .justify-content-center;
   right: unset;
   left: unset;
 }

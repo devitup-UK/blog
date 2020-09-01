@@ -13,7 +13,7 @@
             <h3>{{ data.post.category.getTagName() }}</h3>
         </div>
 		
-		<div class="post-content__excerpt" v-html="data.post.excerpt"></div>
+		<div class="post-content__excerpt" v-html="data.post.content"></div>
         
         <ul class="post-metadata">
             <li class="post-metadata__author">

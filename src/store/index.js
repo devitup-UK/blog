@@ -8,7 +8,7 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
     state: {
-        title: null,
+        title: "DevItUp: Blog",
         description: null,
         navigation: [],
         isLoading: true,

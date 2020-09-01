@@ -6,6 +6,7 @@ import CategoryContent from "./views/CategoryContent.vue";
 import Posts from "./components/Posts.vue";
 import Post from "./views/Post.vue";
 import User from "./views/User.vue";
+import NotFound from "./components/errors/NotFound.vue";
 import { $api } from "./services/wordpress.service";
 
 Vue.use(Router);
@@ -54,6 +55,11 @@ let router = new Router({
       path: "/post/:slug",
       component: Post,
       name: "post"
+    },
+    {
+      path: '*',
+      name: '404',
+      component: NotFound
     }
   ]
 });
