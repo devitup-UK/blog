@@ -133,7 +133,6 @@ export default {
             this.formatPosts(posts);
           })
           .catch((error) => {
-              console.error(error);
             this.$store.commit("triggerError", { code: 100, detail: error });
           });
       }

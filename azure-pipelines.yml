@@ -31,5 +31,5 @@ steps:
     remoteDirectory: '/$(STAGING_FTP_DIRECTORY)/'
     clean: false
     cleanContents: false
-    preservePaths: false
+    preservePaths: true
     trustSSL: false

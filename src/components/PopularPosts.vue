@@ -80,7 +80,6 @@ export default {
           this.data.loading = false;
         })
         .catch((error) => {
-          console.error(error);
           this.$store.commit("triggerError", { code: 100, detail: error });
         });
     },

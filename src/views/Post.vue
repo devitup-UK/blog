@@ -130,7 +130,6 @@ export default {
           });
         })
         .catch((error) => {
-            console.log(error);
           this.data.loading = false;
           switch (error.code) {
             case "rest_post_invalid_id":
